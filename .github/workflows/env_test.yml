@@ -1,0 +1,22 @@
+name: Environment Variables Demo
+
+on: [push]
+
+env:
+  COURSE: DevOps
+
+jobs:
+  show-env:
+    runs-on: ubuntu-latest
+
+    env:
+      TEACHER: Daniel
+
+    steps:
+      - name: Print variables
+        run: echo "$TEACHER teaches $COURSE"
+
+      - name: Step variable
+        env:
+          STUDENT: Shabnam
+        run: echo "$STUDENT is learning $COURSE"
